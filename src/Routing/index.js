@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Test from './test'
-import Home from './home'
+import Home from '../home'
+import BubbleSort from '../Sorting/bubbleSort'
 
 const PageNotFound = () => <h1>Page Not Available</h1>;
 
@@ -10,7 +10,7 @@ const Routes = (props) => {
         <div>
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route exact path="/test" component={Test} />
+                <Route exact path="/test" component={BubbleSort} />
                 <Route component={PageNotFound} status={404} />
             </Switch>
         </div>
