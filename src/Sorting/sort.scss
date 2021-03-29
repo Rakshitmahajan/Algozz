@@ -1,0 +1,44 @@
+.unsorted{
+    color: black;
+    background-color: blue;
+    width: 50px;
+    display: flex;
+    align-items: flex-end;
+    h1{
+        margin: 0;
+        margin-left: 15px;
+        color: white
+    }
+}
+.sorted{
+    color: black;
+    background-color: green;
+    width: 50px;
+    display: flex;
+    align-items: flex-end;
+    h1{
+        margin: 0;
+        margin-left: 15px;
+        color: white
+    }
+}
+.selected{
+    color: black;
+    background-color: red;
+    width: 50px;
+    display: flex;
+    align-items: flex-end;
+    h1{
+        margin: 0;
+        margin-left: 15px;
+        color: white
+    }
+}
+.main-div{
+    display: flex;
+    align-items: flex-end;
+}
+.div2{
+    margin: 10px;
+    margin-left: auto;
+}
