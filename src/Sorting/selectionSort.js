@@ -4,12 +4,13 @@ import './sort.scss'
 class BubbleSort extends React.Component {
     constructor(props) {
         super(props);
-
+        console.log(this.props)
+        
         this.state = {
             arr: props.arr,
             comp: [],
             sorted: []
-        };
+        }
     }
 
     componentWillReceiveProps(){
@@ -37,23 +38,20 @@ class BubbleSort extends React.Component {
         let count = 0
         let xxx = 1
 
-        let i, j
-        for (i = 0; i < arr.length - 1; i++) {
-            for (j = 0; j < arr.length - i - 1; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    let temp = arr[j];
-                    arr[j] = arr[j + 1]
-                    arr[j + 1] = temp
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    let temp = arr[i];
+                    arr[i] = arr[j]
+                    arr[j] = temp
                 }
                 sampleArr.push([...arr])
-                sampleComp.push([j, j + 1])
+                sampleComp.push([i, j])
                 setTimeout(() => { this.changeArr(sampleArr[count], sampleComp[count++]) }, xxx * 1000);
                 xxx = xxx + 0.1
             }
-            setTimeout(() => { this.changeSorted(arr.length - i - 1) }, xxx * 1000);
-            console.log(arr.length - i - 1)
+            setTimeout(() => { this.changeSorted(i) }, xxx * 1000);
         }
-
     }
 
     render() {

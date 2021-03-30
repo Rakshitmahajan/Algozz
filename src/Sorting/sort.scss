@@ -37,8 +37,16 @@
 .main-div{
     display: flex;
     align-items: flex-end;
+    height: 540px;
 }
 .div2{
     margin: 10px;
     margin-left: auto;
+}
+.footer{
+    display : flex;
+    button{
+        margin: auto;
+        margin-top: 6%;
+    }
 }

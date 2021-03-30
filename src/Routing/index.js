@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from '../home'
-import Sort from '../Sorting/bubbleSort'
+import Sort from '../Sorting/Sort'
 
 const PageNotFound = () => <h1>Page Not Available</h1>;
 
