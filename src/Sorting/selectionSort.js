@@ -1,7 +1,7 @@
 import React from 'react';
 import './sort.scss'
 
-class BubbleSort extends React.Component {
+class SelectionSort extends React.Component {
     constructor(props) {
         super(props);
 
@@ -23,16 +23,11 @@ class BubbleSort extends React.Component {
     changeArr(arr, comp) {
         this.setState({ arr, comp })
     }
-
-    changeSort(sort) {
-        this.setState({ sort })
-    }
-
+    
     changeSorted(x) {
         let sorted = [...this.state.sorted]
         sorted.push(x)
         this.setState({ sorted })
-        console.log(this.state.sorted)
     }
 
     sorting() {
@@ -52,7 +47,7 @@ class BubbleSort extends React.Component {
                 sampleArr.push([...arr])
                 sampleComp.push([i, j])
                 setTimeout(() => { this.changeArr(sampleArr[count], sampleComp[count++]) }, xxx * 1000);
-                xxx = xxx + 0.1
+                xxx += 0.1
             }
             setTimeout(() => { this.changeSorted(i) }, xxx * 1000);
         }
@@ -79,5 +74,5 @@ class BubbleSort extends React.Component {
         );
     }
 }
-export default BubbleSort
+export default SelectionSort
 

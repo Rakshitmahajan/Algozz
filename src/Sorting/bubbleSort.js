@@ -22,15 +22,10 @@ class BubbleSort extends React.Component {
         this.setState({ arr, comp })
     }
 
-    changeSort(sort) {
-        this.setState({ sort })
-    }
-
     changeSorted(x) {
         let sorted = [...this.state.sorted]
         sorted.push(x)
         this.setState({ sorted })
-        console.log(this.state.sorted)
     }
 
     sorting() {

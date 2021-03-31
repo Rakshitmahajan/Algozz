@@ -2,12 +2,13 @@ import React from 'react';
 import './sort.scss'
 import BubbleSort from './bubbleSort'
 import SelectionSort from './selectionSort'
+import InsertionSort from './insertionSort'
 
 class Sort extends React.Component {
   state = {
     arr: null,
     sort: 'Bubble Sort',
-    sortingTypes: ['Bubble Sort', 'Selection Sort', 'Merge Sort', 'Quick sort']
+    sortingTypes: ['Bubble Sort', 'Insertion Sort', 'Selection Sort', 'Merge Sort', 'Quick sort']
   }
 
   componentDidMount() {
@@ -28,7 +29,9 @@ class Sort extends React.Component {
       case 'Bubble Sort':
         return <BubbleSort arr={this.state.arr} shuffle={() => this.random()} />
       case 'Selection Sort':
-        return <SelectionSort arr={this.state.arr} />
+        return <SelectionSort arr={this.state.arr} shuffle={() => this.random()} />
+      case 'Insertion Sort':
+        return <InsertionSort arr={this.state.arr} shuffle={() => this.random()} />
       default:
         return <div />
     }

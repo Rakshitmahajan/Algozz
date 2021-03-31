@@ -34,6 +34,18 @@
         color: white
     }
 }
+.insComp{
+    color: black;
+    background-color:orange;
+    width: 50px;
+    display: flex;
+    align-items: flex-end;
+    h1{
+        margin: 0;
+        margin-left: 15px;
+        color: white
+    }
+}
 .main-div{
     display: flex;
     align-items: flex-end;
