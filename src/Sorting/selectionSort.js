@@ -4,8 +4,7 @@ import './sort.scss'
 class BubbleSort extends React.Component {
     constructor(props) {
         super(props);
-        console.log(this.props)
-        
+
         this.state = {
             arr: props.arr,
             comp: [],
@@ -13,8 +12,12 @@ class BubbleSort extends React.Component {
         }
     }
 
-    componentWillReceiveProps(){
-        this.setState({arr: this.props.arr})
+    componentWillReceiveProps() {
+        this.setState({
+            arr: this.props.arr,
+            comp: [],
+            sorted: []
+        })
     }
 
     changeArr(arr, comp) {
@@ -31,6 +34,7 @@ class BubbleSort extends React.Component {
         this.setState({ sorted })
         console.log(this.state.sorted)
     }
+
     sorting() {
         let arr = [...this.state.arr]
         let sampleArr = []
@@ -67,8 +71,9 @@ class BubbleSort extends React.Component {
                                     : <div className="unsorted" style={{ height: item * 60 + 'px' }}><h1>{item}</h1></div>}</div>)
                     })}
                 </div>
-                <div>
-                    <button onClick={() => this.sorting()}> Sort</button>
+                <div className="footer">
+                    <div onClick={() => this.sorting()}> <p>Sort</p></div>
+                    <div onClick={this.props.shuffle}> <p>Shuffle</p> </div>
                 </div>
             </div> : <div />
         );

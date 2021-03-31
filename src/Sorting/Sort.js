@@ -7,6 +7,7 @@ class Sort extends React.Component {
   state = {
     arr: null,
     sort: 'Bubble Sort',
+    sortingTypes: ['Bubble Sort', 'Selection Sort', 'Merge Sort', 'Quick sort']
   }
 
   componentDidMount() {
@@ -14,7 +15,7 @@ class Sort extends React.Component {
   }
 
   random() {
-    const arr = [...Array(12)].map(() => (Math.floor(Math.random() * 9) + 1));
+    const arr = [...Array(15)].map(() => (Math.floor(Math.random() * 9) + 1));
     this.setState({ arr })
   }
 
@@ -25,24 +26,26 @@ class Sort extends React.Component {
   renderSwich() {
     switch (this.state.sort) {
       case 'Bubble Sort':
-        return <BubbleSort arr={this.state.arr} />
+        return <BubbleSort arr={this.state.arr} shuffle={() => this.random()} />
       case 'Selection Sort':
         return <SelectionSort arr={this.state.arr} />
       default:
-        return <div/>
+        return <div />
     }
   }
 
   render() {
     return (
       this.state.arr ? <div>
-        <div> <h1> {this.state.sort} </h1></div>
+        <ul className="top-nav">
+          {this.state.sortingTypes.map((item, key) => {
+            return this.state.sort === item ?
+              <li key={key}><a className="active" onClick={() => this.changeSort(item)}>{item}</a></li> :
+              <li key={key}><a onClick={() => this.changeSort(item)}>{item}</a></li>
+          })}
+          <li className="homePage"><a href="/">Home</a></li>
+        </ul>
         {this.renderSwich()}
-        <div className= "footer">
-          <button onClick={() => this.random()}> Shuffle </button>
-          <button onClick={() => this.changeSort('Bubble Sort')}> Bubble Sort </button>
-          <button onClick={() => this.changeSort('Selection Sort')}> Selection Sort </button>
-        </div>
       </div> : <div />
     );
   }
