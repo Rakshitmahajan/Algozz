@@ -1,48 +1,61 @@
 .unsorted{
     color: black;
     background-color: rgb(149, 149, 231);
-    width: 50px;
+    width: 30px;
     display: flex;
     align-items: flex-end;
     h1{
         margin: 0;
-        margin-left: 15px;
+        margin-left: 8px;
         color: white
     }
 }
 .sorted{
     color: black;
-    background-color: green;
-    width: 50px;
+    background-color: #4CAF50;
+    width: 30px;
     display: flex;
     align-items: flex-end;
     h1{
         margin: 0;
-        margin-left: 15px;
+        margin-left: 8px;
         color: white
     }
 }
 .selected{
     color: black;
     background-color: red;
-    width: 50px;
+    width: 30px;
     display: flex;
     align-items: flex-end;
     h1{
         margin: 0;
-        margin-left: 15px;
+        margin-left: 8px;
         color: white
     }
 }
 .insComp{
     color: black;
     background-color:orange;
-    width: 50px;
+    width: 30px;
     display: flex;
     align-items: flex-end;
     h1{
         margin: 0;
-        margin-left: 15px;
+        margin-left: 8px;
+        color: white
+    }
+}
+
+.tempSorted{
+    color: black;
+    background-color:rgb(118, 238, 202);
+    width: 30px;
+    display: flex;
+    align-items: flex-end;
+    h1{
+        margin: 0;
+        margin-left: 8px;
         color: white
     }
 }
@@ -53,9 +66,12 @@
     width: 80%;
     margin: auto;
     margin-top: 100px;
+    @media (max-width: 1050px) {
+        width: 95%;
+    }
 }
 .div2{
-    margin: 10px;
+    // margin: 10px;
     margin-left: auto;
 }
 .footer{

@@ -9,8 +9,9 @@ const Routes = (props) => {
     return (
         <div>
             <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/sorting" component={Sort} />
+                {/* <Route exact path="/" component={Home} /> */}
+                {/* <Route exact path="/sorting" component={Sort} /> */}
+                <Route exact path="/" component={Sort} />
                 <Route component={PageNotFound} status={404} />
             </Switch>
         </div>

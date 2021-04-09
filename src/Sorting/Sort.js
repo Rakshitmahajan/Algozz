@@ -16,7 +16,7 @@ class Sort extends React.Component {
   }
 
   random() {
-    const arr = [...Array(15)].map(() => (Math.floor(Math.random() * 9) + 1));
+    const arr = [...Array(25)].map(() => (Math.floor(Math.random() * 9) + 1));
     this.setState({ arr })
   }
 

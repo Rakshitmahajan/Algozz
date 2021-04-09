@@ -73,7 +73,7 @@ class InsertionSort extends React.Component {
             xxx += 0.5
             setTimeout(() => { this.changeArr(sampleArr[arrCount++]); this.changeComp([]) }, xxx * 1000);
         }
-        setTimeout(() => { this.changeCurrent(-1); this.changeSorted(true)}, xxx * 1000);
+        setTimeout(() => { this.changeCurrent(-1); this.changeSorted(true) }, xxx * 1000);
     }
 
     render() {
@@ -86,9 +86,11 @@ class InsertionSort extends React.Component {
                                 <div className="sorted" style={{ height: item * 60 + 'px' }}><h1>{item}</h1></div>
                                 : this.state.current == key ?
                                     <div className="selected" style={{ height: item * 60 + 'px' }}><h1>{item}</h1></div>
-                                    : !this.state.comp.includes(key) ?
-                                        <div className="unsorted" style={{ height: item * 60 + 'px' }}><h1>{item}</h1></div>
-                                        : <div className="insComp" style={{ height: item * 60 + 'px' }}><h1>{item}</h1></div>}</div>)
+                                    : this.state.comp.includes(key) ?
+                                        <div className="insComp" style={{ height: item * 60 + 'px' }}><h1>{item}</h1></div>
+                                        : this.state.current < (key) ?
+                                            <div className="unsorted" style={{ height: item * 60 + 'px' }}><h1>{item}</h1></div>
+                                            : <div className="tempSorted" style={{ height: item * 60 + 'px' }}><h1>{item}</h1></div>}</div>)
                     })}
                 </div>
                 <div className="footer">
