@@ -84,7 +84,7 @@ class InsertionSort extends React.Component {
                         return (<div key={key} className="div2" >
                             {this.state.sorted ?
                                 <div className="sorted" style={{ height: item * 60 + 'px' }}><h1>{item}</h1></div>
-                                : this.state.current == key ?
+                                : this.state.current === key ?
                                     <div className="selected" style={{ height: item * 60 + 'px' }}><h1>{item}</h1></div>
                                     : this.state.comp.includes(key) ?
                                         <div className="insComp" style={{ height: item * 60 + 'px' }}><h1>{item}</h1></div>

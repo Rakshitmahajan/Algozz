@@ -3,6 +3,7 @@ import './sort.scss'
 import BubbleSort from './bubbleSort'
 import SelectionSort from './selectionSort'
 import InsertionSort from './insertionSort'
+import MergeSort from './mergeSort'
 
 class Sort extends React.Component {
   state = {
@@ -16,7 +17,7 @@ class Sort extends React.Component {
   }
 
   random() {
-    const arr = [...Array(25)].map(() => (Math.floor(Math.random() * 9) + 1));
+    const arr = [...Array(50)].map(() => (Math.floor(Math.random() * 9) + 1));
     this.setState({ arr })
   }
 
@@ -32,6 +33,8 @@ class Sort extends React.Component {
         return <SelectionSort arr={this.state.arr} shuffle={() => this.random()} />
       case 'Insertion Sort':
         return <InsertionSort arr={this.state.arr} shuffle={() => this.random()} />
+      case 'Merge Sort':
+        return <MergeSort arr={this.state.arr} shuffle={() => this.random()} />
       default:
         return <div />
     }
@@ -46,7 +49,7 @@ class Sort extends React.Component {
               <li key={key}><a className="active" onClick={() => this.changeSort(item)}>{item}</a></li> :
               <li key={key}><a onClick={() => this.changeSort(item)}>{item}</a></li>
           })}
-          <li className="homePage"><a href="/">Home</a></li>
+          {/* <li className="homePage"><a href="/">Home</a></li> */}
         </ul>
         {this.renderSwich()}
       </div> : <div />
